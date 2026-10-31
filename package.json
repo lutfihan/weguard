@@ -1,7 +1,7 @@
 {
   "name": "weguard",
   "productName": "WE Guard",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "description": "Wallpaper Engine Atölye wallpaper'ları için güvenlik kontrolü",
   "author": "WE Guard",

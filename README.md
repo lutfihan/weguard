@@ -39,6 +39,8 @@ Kurulum dosyası şimdilik dijital olarak imzalı değil. Windows "Windows bilgi
 
 WE Guard Windows açılışında arka planda başlar (sistem tepsisinde kalkan simgesi).
 
+**Güncelleme:** 0.2.0 ve sonrası kendini günceller. Birkaç saatte bir bu deponun son sürümüne bakar, yenisini indirip SHA-512 özetini doğrular, sessizce kurar ve yeniden başlar. Kayıt: `%LOCALAPPDATA%\WEGuard\update.log`. 0.1.0 kullanıyorsan son sürümü bir kereliğine elle kur.
+
 ## Wallpaper Engine'e ne yapar? Nasıl geri alınır?
 
 WE Guard, Wallpaper Engine'in arayüz dosyası `ui\dist\index.html`'e tek bir satır ekler ve yanına `weguard-inject.js` betiğini koyar. Wallpaper Engine'in kendi kodunu değiştirmez; kutu, arayüz şablonuna bellekte eklenir. Orijinal dosya önce `%LOCALAPPDATA%\WEGuard\backup` altına yedeklenir. Wallpaper Engine güncellenip ekleme silinirse WE Guard onu kendiliğinden yeniden ekler.
