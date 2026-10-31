@@ -72,6 +72,14 @@ npm start          # uygulamayı geliştirme modunda çalıştırır
 npm run dist       # dist\WE-Guard-Setup-x.y.z.exe üretir
 ```
 
+Yeni sürüm yayınlamak için `package.json`'daki `version`'ı artır, `npm run dist` çalıştır ve üç dosyayı birlikte yükle:
+
+```bash
+gh release create vX.Y.Z dist/WE-Guard-Setup-X.Y.Z.exe dist/WE-Guard-Setup-X.Y.Z.exe.blockmap dist/latest.yml --title "WE Guard X.Y.Z"
+```
+
+`latest.yml` olmadan kurulu uygulamalar yeni sürümü göremez; `.blockmap` sayesinde yalnızca değişen kısım indirilir. Proje klasörünün yolu çok uzunsa (260 karakteri aşarsa) NSIS derlemesi başarısız olur; projeyi kısa bir yola kopyalayıp orada derle.
+
 Kara liste biçimi:
 
 ```json
