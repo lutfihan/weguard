@@ -1,0 +1,42 @@
+name: Zararlı wallpaper bildir / Report a malicious wallpaper
+description: Kara listeye eklenmesi gereken bir Atölye wallpaper'ı ya da yazarı bildir.
+title: "[Bildirim] "
+labels: ["kara-liste"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bildirimler incelenip doğrulanırsa `blocklist/blocklist.json` dosyasına eklenir ve tüm WE Guard kullanıcılarına birkaç saat içinde ulaşır.
+        Lütfen kişisel bilgi, şifre ya da hesap bilgisi paylaşma.
+  - type: input
+    id: link
+    attributes:
+      label: Atölye linki / Workshop link
+      placeholder: https://steamcommunity.com/sharedfiles/filedetails/?id=...
+    validations:
+      required: true
+  - type: dropdown
+    id: what
+    attributes:
+      label: Ne oldu? / What happened?
+      multiple: true
+      options:
+        - Antivirüs (Defender vb.) uyarı verdi / Antivirus flagged it
+        - Klasörde program, script ya da şifreli arşiv var / Program, script or encrypted archive in the folder
+        - Steam hesabım ele geçirildi / My Steam account was hijacked
+        - Bilgisayar yavaşladı, işlemci yükü arttı (madenci şüphesi) / Slowdown, high CPU (possible miner)
+        - Açıklama bir şey indirip çalıştırmamı istiyor / Description asks me to download and run something
+        - Diğer / Other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Ayrıntılar / Details
+      description: Antivirüsün verdiği tehdit adı, şüpheli dosya adları, WE Guard kutusunda yazanlar.
+  - type: checkboxes
+    id: author
+    attributes:
+      label: Yazar / Author
+      options:
+        - label: Bu yazarın başka wallpaper'ları da zararlı görünüyor / This author's other wallpapers look malicious too

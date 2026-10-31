@@ -1,0 +1,48 @@
+{
+  "name": "weguard",
+  "productName": "WE Guard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Wallpaper Engine Atölye wallpaper'ları için güvenlik kontrolü",
+  "author": "WE Guard",
+  "main": "app/main.js",
+  "scripts": {
+    "start": "electron .",
+    "helper": "node helper/server.js",
+    "patch": "node tools/we-patch.js",
+    "dist": "electron-builder --win nsis --x64"
+  },
+  "devDependencies": {
+    "electron": "44.5.1",
+    "electron-builder": "26.17.0"
+  },
+  "build": {
+    "appId": "com.weguard.app",
+    "productName": "WE Guard",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "app/**",
+      "helper/**",
+      "inject/**",
+      "tools/**",
+      "blocklist/**",
+      "package.json"
+    ],
+    "win": {
+      "target": [{ "target": "nsis", "arch": ["x64"] }],
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "runAfterFinish": true,
+      "deleteAppDataOnUninstall": true,
+      "include": "build/installer.nsh",
+      "artifactName": "WE-Guard-Setup-${version}.exe",
+      "shortcutName": "WE Guard"
+    }
+  }
+}
