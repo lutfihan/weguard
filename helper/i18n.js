@@ -59,6 +59,7 @@ const STRINGS = {
       `${p.total} wallpaper tarandı: ${p.ok} güvenli, ${p.warn} şüpheli, ${p.danger} tehlikeli`,
     new_item_title: (p) => (p.state === 'danger' ? 'WE Guard: Tehlikeli olabilir' : 'WE Guard: Şüpheli wallpaper'),
     patch_failed: (p) => `Kutu Wallpaper Engine'e eklenemedi: ${p.message}`,
+    update_installing: (p) => `WE Guard ${p.version} sürümüne güncelleniyor; birkaç saniye içinde yeniden başlayacak.`,
   },
   en: {
     not_found: 'Not found on Steam or removed',
@@ -102,6 +103,7 @@ const STRINGS = {
       `${p.total} wallpapers scanned: ${p.ok} safe, ${p.warn} suspicious, ${p.danger} dangerous`,
     new_item_title: (p) => (p.state === 'danger' ? 'WE Guard: May be dangerous' : 'WE Guard: Suspicious wallpaper'),
     patch_failed: (p) => `Couldn't add the box to Wallpaper Engine: ${p.message}`,
+    update_installing: (p) => `Updating WE Guard to ${p.version}; it will restart in a few seconds.`,
   },
 };
 

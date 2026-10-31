@@ -97,10 +97,13 @@ function status(we) {
   const p = weInfo(we);
   const patched = fs.readFileSync(p.index, 'utf8').includes(TAG);
   const hasBackup = fs.existsSync(p.backup);
+  const injectPresent = fs.existsSync(p.injectDest);
   return {
     version: p.version,
     patched,
-    injectPresent: fs.existsSync(p.injectDest),
+    injectPresent,
+    // WE Guard güncellenince WE'deki betik de yenilenmeli.
+    injectUpToDate: injectPresent && fs.readFileSync(p.injectDest).equals(fs.readFileSync(INJECT_SRC)),
     backup: hasBackup ? p.backup : null,
     matchesBackup: !patched && hasBackup ? sha256(p.index) === sha256(p.backup) : null,
   };

@@ -98,7 +98,8 @@
   var SETTINGS_TEMPLATE =
     '<div class="settingsContainer autoScrollY">' +
     ' <div class="groupBox">' +
-    '  <div class="heading"><span class="fas fa-shield-alt headerIcon"></span> WE Guard</div>' +
+    '  <div class="heading"><span class="fas fa-shield-alt headerIcon"></span> WE Guard' +
+    '   <span class="weguard-version" ng-if="wg.view.version">{{wg.view.version}}</span></div>' +
     '  <div class="infoTable settingsPlaybackTable">' +
     '   <div ng-if="!wg.view"><div class="infoTableLabel">{{wg.L.helperOffline}}</div><div></div></div>' +
     '   <div ng-if="wg.view"><div class="infoTableLabel">{{wg.L.language}}</div>' +
@@ -315,6 +316,7 @@
     '.weguard-faint{opacity:.65}' +
     '.weguard-quote{opacity:.75;font-style:italic;margin-top:2px;overflow:hidden;' +
     'text-overflow:ellipsis;white-space:nowrap}' +
-    '.weguard-error{color:#f85149;margin-top:4px}';
+    '.weguard-error{color:#f85149;margin-top:4px}' +
+    '.weguard-version{opacity:.6;font-weight:normal;margin-left:4px}';
   document.head.appendChild(style);
 })();

@@ -12,6 +12,7 @@ const blocklist = require('./blocklist');
 const scan = require('./scan');
 const settings = require('./settings');
 const { normalizeLang } = require('./i18n');
+const { version } = require('../package.json');
 
 const PORT = 47321;
 const HOSTS = new Set([`127.0.0.1:${PORT}`, `localhost:${PORT}`]);
@@ -30,6 +31,7 @@ function settingsView(lang) {
   const s = settings.get();
   return {
     lang,
+    version,
     settings: { language: s.language, defender: s.defender },
     blocklist: blocklist.info(),
     scan: scan.status(),
